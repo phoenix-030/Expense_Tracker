@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styl.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>💰 Expense Tracker</h1>
+
+    <!-- Add Expense Form -->
+    <form id="expense-form">
+      <input type="text" id="desc" placeholder="Description" required>
+      <input type="number" id="amount" placeholder="Amount" required>
+      <select id="category" required>
+        <option value="">Select Category</option>
+        <option value="Food">🍔 Food</option>
+        <option value="Travel">🚌 Travel</option>
+        <option value="Shopping">🛒 Shopping</option>
+        <option value="Other">📌 Other</option>
+      </select>
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Edit Expense Form (hidden by default) -->
+    <form id="edit-form" style="display: none; margin-top: 10px;">
+      <input type="hidden" id="edit-id">
+      <input type="text" id="edit-desc" placeholder="Description" required>
+      <input type="number" id="edit-amount" placeholder="Amount" required>
+      <select id="edit-category" required>
+        <option value="">Select Category</option>
+        <option value="Food">🍔 Food</option>
+        <option value="Travel">🚌 Travel</option>
+        <option value="Shopping">🛒 Shopping</option>
+        <option value="Other">📌 Other</option>
+      </select>
+      <button type="submit">Update Expense</button>
+    </form>
+
+    <!-- Expense List -->
+    <h2>Expense List</h2>
+    <ul id="expense-list"></ul>
+
+    <!-- Summary -->
+    <div class="summary">
+      <p>Total: <span id="total">0</span> 💵</p>
+    </div>
+
+    <!-- Chart Section -->
+    <h2>Category-wise Summary</h2>
+    <canvas id="expenseChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="fun.js"></script>
+</body>
+</html>
